@@ -14,23 +14,35 @@ export var newsList = [
   "Decoder: Armenia in a bind as Ukraine war resets global order",
   "What books should an aspiring journalist read?",
   "Marie Colvin shined a light on war-torn corners of the world",
+  "I am a cool web developer",
 ];
 
 export function search() {
   //inputValue is the variable that contains the search string
   const inputValue = document.getElementById("search-input").value;
-
   //Write your code here for the search function
 
-  return newsList;
+  var Searching = newsList.filter(a => a.includes(inputValue))
+
+  return newsList = Searching ;
 }
 
 export function sort(type) {
+
   if (type == "ascending") {
     //Write your code here for sorting (ascending)
+    newsList.sort((a,b) =>{
+      return a.replace(/[.*+'^?!${}()|[\]\\]/g, "").localeCompare(b.replace(/[.*+'^?!${}()|[\]\\]/g, ""))
+    });
+    
   } else {
     //Write your code here for sorting (descending)
+   newsList.sort((a,b) =>{
+    return b.replace(/[.*+'^?!${}()|[\]\\]/g, "").localeCompare(a.replace(/[.*+'^?!${}()|[\]\\]/g, ""))
+   });
   }
 
   return newsList;
 }
+
+
