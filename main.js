@@ -15,6 +15,7 @@ export var newsList = [
   "What books should an aspiring journalist read?",
   "Marie Colvin shined a light on war-torn corners of the world",
   "I am a cool web developer",
+  "I am going to be a web developer!"
 ];
 
 export function search() {
@@ -22,7 +23,7 @@ export function search() {
   const inputValue = document.getElementById("search-input").value;
   //Write your code here for the search function
 
-  var Searching = newsList.filter(a => a.includes(inputValue))
+  var Searching = newsList.filter(a => a.match(inputValue))
 
   return newsList = Searching ;
 }
